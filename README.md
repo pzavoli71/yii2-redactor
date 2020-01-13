@@ -1,7 +1,8 @@
 yii2-redactor
 =============
 Extension redactor for Yii2 Framework.
-This is fork from [yii2-redactor](https://github.com/yiidoc/yii2-redactor).
+
+This is fork from [yiidoc/yii2-redactor](https://github.com/yiidoc/yii2-redactor).
 
 Installation
 ------------
