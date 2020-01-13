@@ -5128,12 +5128,15 @@
 					this.link.cleanUrl();
 
 					if (this.link.target == '_blank') $('#redactor-link-blank').prop('checked', true);
+					if (this.link.follow == 'nofollow') $('#redactor-link-follow').prop('checked', true);
 
 					this.link.$inputUrl = $('#redactor-link-url');
 					this.link.$inputText = $('#redactor-link-url-text');
+					this.link.$inputTitle = $('#redactor-link-url-title');
 
 					this.link.$inputText.val(this.link.text);
 					this.link.$inputUrl.val(this.link.url);
+					this.link.$inputTitle.val(this.link.title);
 
 					this.link.buttonInsert.on('click', $.proxy(this.link.insert, this));
 
@@ -5184,6 +5187,7 @@
 					var target = '';
 					var link = this.link.$inputUrl.val();
 					var text = this.link.$inputText.val().replace(/(<([^>]+)>)/ig, "");
+					var title = this.link.$inputTitle.val();
 
 					if ($.trim(link) === '') {
 						this.link.$inputUrl.addClass('redactor-input-error').on('keyup', function () {
@@ -5204,6 +5208,10 @@
 					else if (link.search('#') !== 0) {
 						if ($('#redactor-link-blank').prop('checked')) {
 							target = '_blank';
+						}
+
+						if ($('#redactor-link-follow').prop('checked')) {
+							follow = 'nofollow';
 						}
 
 						// test url (add protocol)
@@ -5689,7 +5697,10 @@
 							+ '<input type="url" id="redactor-link-url" aria-label="URL" />'
 							+ '<label>' + this.lang.get('text') + '</label>'
 							+ '<input type="text" id="redactor-link-url-text" aria-label="' + this.lang.get('text') + '" />'
-							+ '<label><input type="checkbox" id="redactor-link-blank"> ' + this.lang.get('link_new_tab') + '</label>'
+							+ '<label>' + this.lang.get('title') + '</label>'
+							+ '<input type="text" id="redactor-link-url-title" aria-label="' + this.lang.get('title') + '" />'
+							+ '<label><input type="checkbox" id="redactor-link-follow" /> ' + this.lang.get('link_no_follow') + '</label>'
+							+ '<label><input type="checkbox" id="redactor-link-blank" /> ' + this.lang.get('link_new_tab') + '</label>'
 							+ '</section>'
 					};
 
