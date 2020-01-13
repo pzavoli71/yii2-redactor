@@ -1,5 +1,5 @@
 {
-  "name": "yiidoc/yii2-redactor",
+  "name": "bondaf/yii2-redactor",
   "description": "Extension redactor for Yii2 Framework.",
   "keywords": [
     "yii2",
@@ -12,14 +12,13 @@
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "support": {
-    "issues": "https://github.com/yiidoc/yii2-redactor/issues?state=open",
-    "wiki": "http://www.yiidoc.com/wiki/",
-    "source": "https://github.com/yiidoc/yii2-redactor"
+    "issues": "https://github.com/bondaf/yii2-redactor/issues?state=open",
+    "source": "https://github.com/bondaf/yii2-redactor"
   },
   "authors": [
     {
-      "name": "Nghia Nguyen",
-      "email": "zinzinday@gmail.com"
+      "name": "Anton Smirnov",
+      "email": "bondaf@gmail.com"
     }
   ],
   "autoload": {

@@ -2,6 +2,8 @@ yii2-redactor
 =============
 Extension redactor for Yii2 Framework.
 
+This is fork from [yiidoc/yii2-redactor](https://github.com/yiidoc/yii2-redactor).
+
 Installation
 ------------
 
@@ -10,12 +12,12 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yiidoc/yii2-redactor "*"
+php composer.phar require --prefer-dist bondaf/yii2-redactor "*"
 ```
 
  or
 ```
- "yiidoc/yii2-redactor": "*"
+ "bondaf/yii2-redactor": "*"
 ```
 
 to the require section of your composer.json.
@@ -78,6 +80,6 @@ or config advanced redactor reference [Docs](http://imperavi.com/redactor/docs/)
 ```
 
 Bummer! i was tested on my project but not have many time to write document on file and usage.
-If you have problem please create a [issue](https://github.com/yiidoc/yii2-redactor/issues)
+If you have problem please create a [issue](https://github.com/bondaf/yii2-redactor/issues)
 
 Thanks!
