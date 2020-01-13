@@ -1,5 +1,9 @@
 Yii Framework 2 Change Log
 ==========================
+2.0.4
+-----------------------
+- Added nofollow option and title attribute to links 
+
 2.0.3
 -----------------------
 - Imperavi redactor updated to 10.2.5
