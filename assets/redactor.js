@@ -5224,10 +5224,10 @@
 						}
 					}
 
-					this.link.set(text, link, target);
+					this.link.set(text, link, target, title, follow);
 					this.modal.close();
 				},
-				set: function (text, link, target) {
+				set: function (text, link, target, title, follow) {
 					text = $.trim(text.replace(/<|>/g, ''));
 
 					this.selection.restore();
@@ -5261,6 +5261,20 @@
 						}
 						else {
 							$link.removeAttr('target');
+						}
+
+						if (follow !== '') {
+							$link.attr('rel', follow);
+						}
+						else {
+							$link.removeAttr('rel');
+						}
+
+						if (title !== '') {
+							$link.attr('title', title);
+						}
+						else {
+							$link.removeAttr('title');
 						}
 
 						this.selection.selectElement($link);
