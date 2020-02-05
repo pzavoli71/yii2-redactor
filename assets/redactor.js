@@ -5173,11 +5173,15 @@
 						this.link.url = $el.attr('href');
 						this.link.text = $el.text();
 						this.link.target = $el.attr('target');
+						this.link.title = $el.attr('title');
+						this.link.follow = $el.attr('rel');
 					}
 					else {
 						this.link.text = this.sel.toString();
 						this.link.url = '';
 						this.link.target = '';
+						this.link.title = '';
+						this.link.follow = '';
 					}
 
 				},
@@ -5185,6 +5189,7 @@
 					this.placeholder.remove();
 
 					var target = '';
+					var follow = '';
 					var link = this.link.$inputUrl.val();
 					var text = this.link.$inputText.val().replace(/(<([^>]+)>)/ig, "");
 					var title = this.link.$inputTitle.val();
@@ -5285,6 +5290,8 @@
 						if (this.utils.browser('mozilla') && this.link.text === '') {
 							var $a = $('<a />').attr('href', link).text(text);
 							if (target !== '') $a.attr('target', target);
+							if (follow !== '') $a.attr('rel', follow);
+							if (title !== '') $a.attr('title', title)
 
 							$a = $(this.insert.node($a));
 
@@ -5299,6 +5306,8 @@
 							if (this.utils.browser('msie')) {
 								$a = $('<a href="' + link + '">').text(text);
 								if (target !== '') $a.attr('target', target);
+								if (follow !== '') $a.attr('rel', follow);
+								if (title !== '') $a.attr('title', title);
 
 								$a = $(this.insert.node($a));
 
@@ -5317,6 +5326,8 @@
 								}
 
 								if (target !== '') $a.attr('target', target);
+								if (follow !== '') $a.attr('rel', follow);
+								if (title !== '') $a.attr('title', title);
 								$a.removeAttr('style').removeAttr('_moz_dirty');
 
 								if (this.selection.getText().match(/\s$/)) {
