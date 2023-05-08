@@ -5423,11 +5423,31 @@
 						.addBack()
 						.contents()
 						.filter(function () {
-							return this.nodeType === 3 && $.trim(this.nodeValue) != "" && !$(this).parent().is("pre") && (this.nodeValue.match(opts.linkify.regexps.youtube) || this.nodeValue.match(opts.linkify.regexps.vimeo) || this.nodeValue.match(opts.linkify.regexps.image) || this.nodeValue.match(opts.linkify.regexps.url));
+						    if (this.nodeType ===3) {
+							    return this.nodeType === 3 && $.trim(this.nodeValue) != "" && !$(this).parent().is("pre") && (this.nodeValue.match(opts.linkify.regexps.youtube) || this.nodeValue.match(opts.linkify.regexps.vimeo) || this.nodeValue.match(opts.linkify.regexps.image) || this.nodeValue.match(opts.linkify.regexps.url));
+						    } else if (this.nodeType === 1) {
+						        if ( this.localName === 'p' && this.children.length > 0) {
+						            if ( this.children[0].localName === 'a') {
+						                var nodofiglio = this.children[0];
+						                var nodevalue = nodofiglio.attributes['href'];
+						                return $.trim(nodevalue.nodeValue) != "" && !$(this).parent().is("pre") && (nodevalue.nodeValue.match(opts.linkify.regexps.youtube) || nodevalue.nodeValue.match(opts.linkify.regexps.vimeo) || nodevalue.nodeValue.match(opts.linkify.regexps.image) || nodevalue.nodeValue.match(opts.linkify.regexps.url));
+						            }
+						        }
+						    }
+						    return false;
 						})
 						.each(function () {
 							var text = $(this).text(),
 								html = text;
+	        				        if (this.nodeType === 1) {
+						            if ( this.localName === 'p' && this.children.length > 0) {
+						                if ( this.children[0].localName === 'a') {
+						                    var nodofiglio = this.children[0];
+						                    text = nodofiglio.attributes['href'].nodeValue;
+						                    html = text;
+						                }
+						            }
+						        }
 
 							if (opts.convertVideoLinks && (html.match(opts.linkify.regexps.youtube) || html.match(opts.linkify.regexps.vimeo))) {
 								html = linkify.convertVideoLinks(html);
