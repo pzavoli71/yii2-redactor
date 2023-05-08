@@ -1,6 +1,6 @@
 {
-  "name": "bondaf/yii2-redactor",
-  "description": "Extension redactor for Yii2 Framework.",
+  "name": "pzavoli71/yii2-redactor",
+  "description": "Extension redactor for Yii2 Framework. Update with youtube videos embeds.",
   "keywords": [
     "yii2",
     "extension",
@@ -12,13 +12,13 @@
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "support": {
-    "issues": "https://github.com/bondaf/yii2-redactor/issues?state=open",
-    "source": "https://github.com/bondaf/yii2-redactor"
+    "issues": "https://github.com/pzavoli71/yii2-redactor/issues?state=open",
+    "source": "https://github.com/pzavoli71/yii2-redactor"
   },
   "authors": [
     {
-      "name": "Anton Smirnov",
-      "email": "bondaf@gmail.com"
+      "name": "Paride Zavoli",
+      "email": "paride.zavoli71@gmail.com"
     }
   ],
   "autoload": {
