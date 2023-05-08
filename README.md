@@ -12,12 +12,12 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist bondaf/yii2-redactor "*"
+php composer.phar require --prefer-dist pzavoli71/yii2-redactor "*"
 ```
 
  or
 ```
- "bondaf/yii2-redactor": "*"
+ "pzavoli71/yii2-redactor": "*"
 ```
 
 to the require section of your composer.json.
