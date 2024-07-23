@@ -5483,8 +5483,8 @@
 					this.code.sync();
 				},
 				convertVideoLinks: function (html) {
-					var iframeStart = '<iframe class="redactor-linkify-object" width="500" height="281" src="',
-						iframeEnd = '" frameborder="0" allowfullscreen></iframe>';
+					var iframeStart = '<iframe class="redactor-linkify-object videoframe-class" src="',
+						iframeEnd = '" frameborder="0" allowfullscreen></iframe>'; // width="500" height="281" 
 
 					if (html.match(this.opts.linkify.regexps.youtube)) {
 						html = html.replace(this.opts.linkify.regexps.youtube, iframeStart + '//www.youtube.com/embed/$1' + iframeEnd);
